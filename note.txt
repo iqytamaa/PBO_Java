@@ -1,0 +1,16 @@
+- Master data barang
+- Transaksi barang keluar sampai bayaran
+- Memastikan payment terkonfirmasi sebelum mengubah master data barang
+- QR Code
+- Laporan keuangan 
+
+Tambahan :
+- Perhatikan satuan barang
+
+
+> User autentikasi
+Kasir :
+- Hanya melakukan transaksi
+
+Admin :
+- Melihat data barang dan laporan

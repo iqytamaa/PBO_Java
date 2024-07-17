@@ -211,7 +211,7 @@ public class Mahasiswa extends javax.swing.JFrame {
         });
         getContentPane().add(chika_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 740, 370));
 
         pack();

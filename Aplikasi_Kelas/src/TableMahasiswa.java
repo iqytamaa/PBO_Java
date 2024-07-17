@@ -126,7 +126,7 @@ import javax.swing.table.TableModel;
         });
         getContentPane().add(chika_uangkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 140, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 380));
 
         pack();

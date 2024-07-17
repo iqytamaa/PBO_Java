@@ -80,7 +80,7 @@ public class Keterangan extends javax.swing.JFrame {
         });
         getContentPane().add(chika_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 400));
 

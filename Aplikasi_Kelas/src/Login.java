@@ -44,7 +44,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(chika_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 140, 30));
 
         chika_login1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        chika_login1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\assets\\Unlock-icon.png")); // NOI18N
         chika_login1.setText("LOGIN");
         chika_login1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +58,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, -1, -1));
 
         chika_keterangan.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        chika_keterangan.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\assets\\Unlock-icon.png")); // NOI18N
         chika_keterangan.setText("KETEERANGAN");
         chika_keterangan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +68,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 440, 210));
 
-        bg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
         pack();

@@ -14,6 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.text.SimpleDateFormat;
 import java.sql.SQLException;
+import java.util.Date;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -144,6 +147,7 @@ public class UangKas extends javax.swing.JFrame {
         chika_simpan = new javax.swing.JButton();
         chika_edit = new javax.swing.JButton();
         chika_hapus = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         chika_menu = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         chika_table = new javax.swing.JTable();
@@ -289,7 +293,7 @@ public class UangKas extends javax.swing.JFrame {
                 chika_searchActionPerformed(evt);
             }
         });
-        jPanel2.add(chika_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 100, 70));
+        jPanel2.add(chika_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 100, 70));
 
         chika_clear.setText("CLEAR");
         chika_clear.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +301,7 @@ public class UangKas extends javax.swing.JFrame {
                 chika_clearActionPerformed(evt);
             }
         });
-        jPanel2.add(chika_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 100, 70));
+        jPanel2.add(chika_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 100, 70));
 
         chika_simpan.setText("SIMPAN");
         chika_simpan.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +309,7 @@ public class UangKas extends javax.swing.JFrame {
                 chika_simpanActionPerformed(evt);
             }
         });
-        jPanel2.add(chika_simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 100, 70));
+        jPanel2.add(chika_simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 100, 70));
 
         chika_edit.setText("EDIT");
         chika_edit.addActionListener(new java.awt.event.ActionListener() {
@@ -313,7 +317,7 @@ public class UangKas extends javax.swing.JFrame {
                 chika_editActionPerformed(evt);
             }
         });
-        jPanel2.add(chika_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 100, 70));
+        jPanel2.add(chika_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 100, 70));
 
         chika_hapus.setText("HAPUS");
         chika_hapus.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +325,19 @@ public class UangKas extends javax.swing.JFrame {
                 chika_hapusActionPerformed(evt);
             }
         });
-        jPanel2.add(chika_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 100, 70));
+        jPanel2.add(chika_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 100, 70));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 200, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 520, 300));
 
@@ -558,26 +574,18 @@ public class UangKas extends javax.swing.JFrame {
     }//GEN-LAST:event_chika_menuActionPerformed
 
     private void chika_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chika_tableMouseClicked
-        // TODO add your handling code here:
-         int i = chika_table.getSelectedRow();
-    if(i==-1){
-    return;
+    int selectedRow = chika_table.getSelectedRow();
+    if (selectedRow != -1) {
+        // Retrieve the actual row index
+        int rowIndex = chika_table.convertRowIndexToModel(selectedRow);
+        DefaultTableModel model = (DefaultTableModel) chika_table.getModel();
+        chika_no.setText(model.getValueAt(rowIndex, 0).toString());
+        chika_nama.setText(model.getValueAt(rowIndex, 2).toString());
+        chika_pembayaran.setText(model.getValueAt(rowIndex, 3).toString());
+        chika_pengeluaran.setText(model.getValueAt(rowIndex, 4).toString());
+        chika_saldoakhir.setText(model.getValueAt(rowIndex, 5).toString());
+        chika_keterangan.setText(model.getValueAt(rowIndex, 6).toString());
     }
-    String code = (String)chika_table.getValueAt(i,0);
-    String code1 = (String)chika_table.getValueAt(i,1);
-    String code2 = (String)chika_table.getValueAt(i,2);
-    String code3 = (String)chika_table.getValueAt(i,3);
-    String code4 = (String)chika_table.getValueAt(i,4);
-    String code5 = (String)chika_table.getValueAt(i,5);
-    String code6 = (String)chika_table.getValueAt(i,6);
-    
-    chika_no.setText(code);
-    chika_tanggal.setDateFormatString(code1);
-    chika_nama.setText(code2);
-    chika_pembayaran.setText(code3);
-    chika_pengeluaran.setText(code4);
-    chika_saldoakhir.setText(code5);
-    chika_keterangan.setText(code6);
     }//GEN-LAST:event_chika_tableMouseClicked
 
     private void chika_pembayaranKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_chika_pembayaranKeyTyped
@@ -616,8 +624,7 @@ public class UangKas extends javax.swing.JFrame {
     }//GEN-LAST:event_chika_noKeyTyped
 
     private void chika_saldoakhirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chika_saldoakhirActionPerformed
-        // TODO add your handling code here:
-        
+    
     }//GEN-LAST:event_chika_saldoakhirActionPerformed
 
     private void chika_pembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chika_pembayaranActionPerformed
@@ -629,8 +636,19 @@ public class UangKas extends javax.swing.JFrame {
     }//GEN-LAST:event_chika_pengeluaranActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+    String searchQuery = jTextField1.getText();
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) chika_table.getModel());
+    chika_table.setRowSorter(sorter);
+    sorter.setRowFilter(RowFilter.regexFilter("(?i)" + searchQuery));
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments
@@ -689,6 +707,7 @@ public class UangKas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JCheckBox pembayaran;
     private javax.swing.JCheckBox pengeluaran;

@@ -36,6 +36,7 @@ public class MenuUtama extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         chika_logout = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +59,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         chika_mahasiswa.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        chika_mahasiswa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\assets\\image upload.png")); // NOI18N
         chika_mahasiswa.setText("Mahasiswa");
         chika_mahasiswa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel2.add(chika_mahasiswa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 130, 30));
 
         chika_user.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        chika_user.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\assets\\update.png")); // NOI18N
         chika_user.setText("User");
         chika_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +77,6 @@ public class MenuUtama extends javax.swing.JFrame {
         jPanel2.add(chika_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 130, 30));
 
         chika_uangkas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        chika_uangkas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\assets\\new-icon.png")); // NOI18N
         chika_uangkas.setText("Uang Kas");
         chika_uangkas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,9 +100,11 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(chika_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -179,6 +179,7 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

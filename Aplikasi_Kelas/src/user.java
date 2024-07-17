@@ -197,7 +197,7 @@ public class user extends javax.swing.JFrame {
         });
         getContentPane().add(chika_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rizqy\\Downloads\\sekul img.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/sekul img.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
         pack();
